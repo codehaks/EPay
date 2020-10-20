@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EPay.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EPay.Data
 {
@@ -9,6 +10,7 @@ namespace EPay.Data
         {
         }
 
+        public DbSet<Payment> Payments { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)
