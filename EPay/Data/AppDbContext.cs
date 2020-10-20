@@ -10,7 +10,10 @@ namespace EPay.Data
         {
         }
 
-        public DbSet<Payment> Payments { get; set; }
+        //public DbSet<Payment> Payments { get; set; }
+
+        public DbSet<PaymentEvent> PaymentEvents { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder builder)
