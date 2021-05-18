@@ -2,20 +2,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EPay.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EPay.Pages
+namespace EPay.Pages.Payments
 {
-    public class PaymentModel : PageModel
+    public class CreateModel : PageModel
     {
-        [BindProperty]
-        public Payment Payment { get; set; }
-
-        public void OnPost()
+        public void OnGet()
         {
-
         }
     }
 }

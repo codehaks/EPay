@@ -8,9 +8,13 @@ namespace EPay.Models
 {
     public class Payment
     {
-        public string CustomerName { get; set; }
+
+        public Guid Id { get; set; }
+        public EventType Type { get; set; }
+        public DateTime TimeCreated { get; set; }
+        public string UserName { get; set; }
         public int Amount { get; set; }
-        public int OrderId { get; set; }
+        
     }
 
     public enum EventType
@@ -19,14 +23,4 @@ namespace EPay.Models
         Deposite = 2
     }
 
-    public class PaymentEvent
-    {
-        public Guid Id { get; set; }
-        public EventType Type { get; set; }
-
-        [Column(TypeName = "jsonb")]
-        public string Data { get; set; }
-
-        public DateTime TimeCreated { get; set; }
-    }
 }

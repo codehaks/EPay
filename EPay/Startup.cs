@@ -24,8 +24,12 @@ namespace EPay
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>
-             (options => options.UseNpgsql("Host=localhost;Database=epay_db;Username=postgres;Password=@Codehaks"));
+            services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlite("Data Source=app.sqlite");
+                //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+                options.LogTo(Console.WriteLine,Microsoft.Extensions.Logging.LogLevel.Information);
+            });
             services.AddRazorPages();
         }
 

@@ -4,7 +4,6 @@ using EPay.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace EPay.Migrations
 {
@@ -15,28 +14,29 @@ namespace EPay.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityByDefaultColumns()
-                .HasAnnotation("Relational:MaxIdentifierLength", 63)
-                .HasAnnotation("ProductVersion", "5.0.0-rc.2.20475.6");
+                .HasAnnotation("ProductVersion", "5.0.6");
 
-            modelBuilder.Entity("EPay.Models.PaymentEvent", b =>
+            modelBuilder.Entity("EPay.Models.Payment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("TEXT");
 
-                    b.Property<string>("Data")
-                        .HasColumnType("jsonb");
+                    b.Property<int>("Amount")
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("TimeCreated")
-                        .HasColumnType("timestamp without time zone");
+                        .HasColumnType("TEXT");
 
                     b.Property<int>("Type")
-                        .HasColumnType("integer");
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.ToTable("PaymentEvents");
+                    b.ToTable("Payments");
                 });
 #pragma warning restore 612, 618
         }
