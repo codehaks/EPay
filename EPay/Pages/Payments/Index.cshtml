@@ -2,3 +2,33 @@
 @model EPay.Pages.Payments.IndexModel
 @{
 }
+
+<table class="table">
+    <tr>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Type</th>
+        <th>Time</th>
+
+    </tr>
+
+    @foreach (var payment in Model.Payments)
+    {
+        <tr>
+            <td>
+                @payment.UserName
+            </td>
+            <td>
+                @payment.Amount
+            </td>
+            <td>
+                @payment.Type
+            </td>
+
+            <td>
+                @payment.TimeCreated
+            </td>
+        </tr>
+    }
+
+</table>
