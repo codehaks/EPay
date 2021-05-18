@@ -1,7 +1,10 @@
 ﻿@page
 @model EPay.Pages.Payments.IndexModel
 @{
+    ViewData["title"] = "Payments";
 }
+
+<a class="btn btn-primary m-3" asp-page="/payments/create" role="button">New Payment</a>
 
 <table class="table">
     <tr>

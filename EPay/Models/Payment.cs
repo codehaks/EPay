@@ -14,12 +14,13 @@ namespace EPay.Models
         public DateTime TimeCreated { get; set; }
         public string UserName { get; set; }
         public int Amount { get; set; }
-        
+
     }
 
     public enum EventType
     {
-        Debit = 1,
+        None = 0,
+        Withdraw = 1,
         Deposite = 2
     }
 

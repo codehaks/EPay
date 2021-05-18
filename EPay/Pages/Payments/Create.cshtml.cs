@@ -23,6 +23,7 @@ namespace EPay.Pages.Payments
 
         public IActionResult OnPost()
         {
+            Payment.TimeCreated = DateTime.Now;
             _db.Payments.Add(Payment);
             _db.SaveChanges();
 
